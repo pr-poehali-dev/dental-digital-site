@@ -8,30 +8,53 @@ import Icon from "@/components/ui/icon";
 const Index = () => {
   const services = [
     {
-      icon: "Radio",
-      title: "PR Оффлайн",
-      description: "Радио, билборды, мероприятия, СМИ — комплексное продвижение в традиционных каналах",
-      features: ["Радиореклама", "Билборды", "Мероприятия", "СМИ"]
+      icon: "Megaphone",
+      title: "PR & Оффлайн-маркетинг",
+      description: "Построение репутации и привлечение пациентов через традиционные каналы",
+      features: ["Работа с медиа и пресс-релизами", "Организация событий и мероприятий", "Партнерские программы с врачами", "Репутационный менеджмент"]
     },
     {
       icon: "Bot",
-      title: "AI Автоматизация",
-      description: "Умные системы для оптимизации всех процессов стоматологической клиники",
-      features: ["Чат-боты", "Автоматизация", "Аналитика", "Интеграции"]
+      title: "AI-автоматизация",
+      description: "Внедрение искусственного интеллекта для оптимизации работы клиники",
+      features: ["Автоматизация записи пациентов", "AI-чат-боты для консультаций", "Прогнозирование потребностей", "Персонализация предложений"]
     },
     {
-      icon: "Target",
+      icon: "Users",
       title: "Полный цикл пациента",
-      description: "От первого знакомства до удержания — управление всем путем клиента",
-      features: ["Привлечение", "Конверсия", "Продажи", "Удержание"]
+      description: "Комплексное сопровождение от первого контакта до лояльности",
+      features: ["Настройка воронки продаж", "CRM-система для клиники", "Программы лояльности", "Аналитика и отчетность"]
     }
   ];
 
   const stats = [
-    { number: "300%", label: "Увеличение записей" },
-    { number: "50%", label: "Снижение затрат" },
-    { number: "95%", label: "Удержание пациентов" },
-    { number: "24/7", label: "Автоматизация" }
+    { number: "200+", label: "Клиник-партнеров" },
+    { number: "50%", label: "Рост записей" },
+    { number: "24/7", label: "Автоматизация" },
+    { number: "98%", label: "Удовлетворенность" }
+  ];
+
+  const benefits = [
+    {
+      icon: "TrendingUp",
+      title: "Увеличение прибыли",
+      description: "Рост выручки на 30-50% благодаря оптимизации процессов"
+    },
+    {
+      icon: "Clock",
+      title: "Экономия времени",
+      description: "Автоматизация рутинных задач освобождает время для пациентов"
+    },
+    {
+      icon: "Target",
+      title: "Точное таргетирование",
+      description: "AI-алгоритмы находят идеальных пациентов для вашей практики"
+    },
+    {
+      icon: "Shield",
+      title: "Репутация онлайн",
+      description: "Профессиональное управление отзывами и репутацией"
+    }
   ];
 
   return (
@@ -109,11 +132,11 @@ const Index = () => {
       <section id="services" className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="text-4xl font-display font-bold text-black mb-6">
-              Услуги
+            <h2 className="text-4xl md:text-5xl font-display font-bold text-black mb-6">
+              Экспертиза в digital-стоматологии
             </h2>
             <p className="text-xl text-gray-600 font-text">
-              Комплексные решения для развития стоматологической практики
+              Комплексные решения для роста и развития стоматологической практики
             </p>
           </div>
           
@@ -155,79 +178,85 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Benefits Section */}
+      <section id="benefits" className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-display font-bold text-black mb-6">
+              Преимущества работы с нами
+            </h2>
+            <p className="text-xl text-gray-600 font-text">
+              Почему стоматологи выбирают наши digital-решения
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+            {benefits.map((benefit, index) => (
+              <div key={index} className="text-center group animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
+                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-colors">
+                  <Icon name={benefit.icon} className="text-primary" size={32} />
+                </div>
+                <h3 className="text-lg font-display font-semibold text-black mb-2">
+                  {benefit.title}
+                </h3>
+                <p className="text-gray-600 font-text text-sm">
+                  {benefit.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Contact Section */}
-      <section id="contact" className="py-20 bg-white">
+      <section id="contact" className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-display font-bold text-black mb-6">
-                Контакты
-              </h2>
-              <p className="text-xl text-gray-600 font-text">
-                Готовы обсудить ваш проект? Свяжитесь со мной удобным способом
-              </p>
-            </div>
-            
-            <div className="grid md:grid-cols-2 gap-12">
-              {/* Contact Info */}
-              <div className="space-y-8">
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
-                    <Icon name="Mail" className="text-primary" size={20} />
-                  </div>
-                  <div>
-                    <h3 className="font-display font-semibold text-black mb-2">Email</h3>
-                    <p className="text-gray-600 font-text">info@digitaldental.pro</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <h2 className="text-4xl md:text-5xl font-display font-bold text-black mb-6">
+                  Готовы к росту?
+                </h2>
+                <p className="text-xl text-gray-600 mb-8 font-text">
+                  Получите персональную консультацию по развитию вашей стоматологической практики
+                </p>
+                <div className="space-y-4">
+                  <div className="flex items-center space-x-3">
                     <Icon name="Phone" className="text-primary" size={20} />
+                    <span className="text-gray-700 font-text">+7 (999) 123-45-67</span>
                   </div>
-                  <div>
-                    <h3 className="font-display font-semibold text-black mb-2">Телефон</h3>
-                    <p className="text-gray-600 font-text">+7 (999) 123-45-67</p>
+                  <div className="flex items-center space-x-3">
+                    <Icon name="Mail" className="text-primary" size={20} />
+                    <span className="text-gray-700 font-text">info@dentaldigital.ru</span>
                   </div>
-                </div>
-                
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
-                    <Icon name="MessageSquare" className="text-primary" size={20} />
-                  </div>
-                  <div>
-                    <h3 className="font-display font-semibold text-black mb-2">Telegram</h3>
-                    <p className="text-gray-600 font-text">@digitaldentalexpert</p>
+                  <div className="flex items-center space-x-3">
+                    <Icon name="MapPin" className="text-primary" size={20} />
+                    <span className="text-gray-700 font-text">Москва, Красная площадь, 1</span>
                   </div>
                 </div>
               </div>
-
-              {/* Contact Form */}
-              <Card className="bg-gray-50 border-0">
+              
+              <Card className="bg-white border-0 shadow-xl">
                 <CardHeader>
-                  <CardTitle className="font-display font-semibold text-black">
-                    Написать сообщение
+                  <CardTitle className="text-2xl font-display font-semibold text-black">
+                    Бесплатная консультация
                   </CardTitle>
+                  <CardDescription className="text-gray-600 font-text">
+                    Расскажите о своей клинике и получите план развития
+                  </CardDescription>
                 </CardHeader>
-                <CardContent className="space-y-6">
-                  <div className="space-y-2">
-                    <Label htmlFor="name" className="font-text text-gray-700">Имя</Label>
-                    <Input id="name" placeholder="Ваше имя" className="bg-white border-gray-200" />
+                <CardContent className="space-y-4">
+                  <div className="grid grid-cols-2 gap-4">
+                    <Input placeholder="Имя" className="border-gray-200 font-text" />
+                    <Input placeholder="Телефон" className="border-gray-200 font-text" />
                   </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="email" className="font-text text-gray-700">Email</Label>
-                    <Input id="email" type="email" placeholder="your@email.com" className="bg-white border-gray-200" />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="message" className="font-text text-gray-700">Сообщение</Label>
-                    <Textarea 
-                      id="message" 
-                      placeholder="Расскажите о вашем проекте..."
-                      className="bg-white border-gray-200 min-h-[120px]" 
-                    />
-                  </div>
+                  <Input placeholder="Email" className="border-gray-200 font-text" />
+                  <Textarea 
+                    placeholder="Расскажите о своей клинике и задачах" 
+                    className="border-gray-200 font-text min-h-[100px]"
+                  />
                   <Button className="w-full bg-primary text-white hover:bg-primary/90 font-text">
-                    Отправить сообщение
+                    Получить консультацию
                   </Button>
                 </CardContent>
               </Card>
@@ -239,14 +268,47 @@ const Index = () => {
       {/* Footer */}
       <footer className="bg-black text-white py-12">
         <div className="container mx-auto px-4">
-          <div className="text-center">
-            <div className="flex items-center justify-center space-x-2 mb-4">
-              <Icon name="Zap" className="text-primary" size={24} />
-              <span className="text-xl font-display font-semibold">DIGITAL DENTAL</span>
+          <div className="grid md:grid-cols-4 gap-8">
+            <div>
+              <div className="flex items-center space-x-2 mb-4">
+                <Icon name="Zap" className="text-primary" size={24} />
+                <span className="text-lg font-display font-semibold">DentalDigital</span>
+              </div>
+              <p className="text-gray-400 font-text">
+                Digital-специалист для стоматологии. Полный цикл развития практики.
+              </p>
             </div>
-            <p className="text-gray-400 font-text">
-              Digital-специалист для стоматологии
-            </p>
+            
+            <div>
+              <h4 className="text-lg font-display font-semibold mb-4">Услуги</h4>
+              <ul className="space-y-2 text-gray-400 font-text">
+                <li><a href="#" className="hover:text-white transition-colors">PR & Маркетинг</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">AI-автоматизация</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Полный цикл пациента</a></li>
+              </ul>
+            </div>
+            
+            <div>
+              <h4 className="text-lg font-display font-semibold mb-4">Компания</h4>
+              <ul className="space-y-2 text-gray-400 font-text">
+                <li><a href="#" className="hover:text-white transition-colors">О нас</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Кейсы</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Блог</a></li>
+              </ul>
+            </div>
+            
+            <div>
+              <h4 className="text-lg font-display font-semibold mb-4">Контакты</h4>
+              <div className="space-y-2 text-gray-400 font-text">
+                <p>+7 (999) 123-45-67</p>
+                <p>info@dentaldigital.ru</p>
+                <p>Москва, Красная площадь, 1</p>
+              </div>
+            </div>
+          </div>
+          
+          <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400 font-text">
+            <p>© 2024 DentalDigital. Все права защищены.</p>
           </div>
         </div>
       </footer>
